@@ -26,7 +26,7 @@ int main(void)
 	int erreur = WSAStartup(MAKEWORD(2, 2), &WSAData);
 
 	SOCKET sock;
-	
+
 
 	SOCKADDR_IN sin;
 
@@ -40,7 +40,7 @@ int main(void)
 
 
 		sin.sin_family = AF_INET;
-		
+
 
 		sin.sin_port = htons(PORT);
 
@@ -55,7 +55,7 @@ int main(void)
 
 				char buffer[9999] = "";
 
-				while (fgets(path, sizeof(path), -1, fp) != NULL)
+				while (fgets(path, sizeof(path)-1, fp) != NULL)
 				{
 					strcat(buffer, path);
 				}
@@ -70,13 +70,3 @@ int main(void)
 	}
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
