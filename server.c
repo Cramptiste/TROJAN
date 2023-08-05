@@ -44,7 +44,7 @@ int main(void)
 
 		sin.sin_port = htons(PORT);
 
-		if (connect(sock, (SOCKADDR*)& sin, sizeof(sin)), != SOCKET_ERROR)
+		if (connect(sock, (SOCKADDR*)& sin, sizeof(sin)) != SOCKET_ERROR)
 		{
 			while (recv(sock, buffer, 999, 0) != SOCKET_ERROR)
 			{
@@ -70,3 +70,13 @@ int main(void)
 	}
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
